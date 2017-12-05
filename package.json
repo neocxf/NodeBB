@@ -14,7 +14,9 @@
     "lint": "eslint --cache .",
     "pretest": "npm run lint",
     "test": "istanbul cover node_modules/mocha/bin/_mocha -- -R dot",
-    "coveralls": "istanbul cover _mocha --report lcovonly -- -R dot && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "coveralls": "istanbul cover _mocha --report lcovonly -- -R dot && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "async": "~1.5.0",
@@ -95,7 +97,8 @@
     "validator": "^6.1.0",
     "winston": "^2.1.0",
     "xml": "^1.0.1",
-    "xregexp": "~3.1.0"
+    "xregexp": "~3.1.0",
+    "snyk": "^1.53.0"
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
@@ -132,5 +135,6 @@
       "email": "baris@nodebb.org",
       "url": "https://github.com/barisusakli"
     }
-  ]
+  ],
+  "snyk": true
 }
